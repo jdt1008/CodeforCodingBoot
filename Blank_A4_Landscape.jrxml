@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d6abedc8-9c1f-4204-b05a-89b8a62ad497">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="VaccineSurvey_Data"/>
+	<queryString language="xls">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Vaccine Dose Status" class="java.lang.String"/>
+	<field name="Percentage" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="210" height="50" uuid="1d0c3e33-5a76-41ed-a923-fa3ac7ccba15"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Vaccine Survey]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="49" width="100" height="30" uuid="785f8cd8-f367-4c11-90ee-27ed3b19e74f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Published]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="100" y="49" width="100" height="30" uuid="03df0538-d918-4ecf-8b7b-a22e7fe9f778"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="320" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="151" y="120" width="200" height="200" uuid="bb24775c-5b98-49bf-a7f2-a20c05277f96"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{Percentage}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Vaccine Dose Status}]]></valueExpression>
+					<labelExpression><![CDATA[$F{Percentage}]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

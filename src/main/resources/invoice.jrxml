@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcc7dd4f-dff1-44ed-a6d1-1bbf94abc9a5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="emailAddress" class="java.lang.String"/>
+	<field name="phoneNumber" class="java.lang.String"/>
+	<field name="lastName" class="java.lang.String"/>
+	<field name="firstName" class="java.lang.String"/>
+	<field name="studentId" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#4D4D4D" uuid="682550bd-a570-41a1-a095-5aec9ff8a4d5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" forecolor="#FFFFFF" uuid="d0c1c40c-2697-4209-8223-a365f038485b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="42"/>
+				</textElement>
+				<text><![CDATA[Class List]]></text>
+			</staticText>
+			<image>
+				<reportElement x="410" y="0" width="120" height="79" uuid="90589a79-6eef-4cd5-ae7b-7d86786b93ca"/>
+				<imageExpression><![CDATA["https://rockpride.sru.edu/map/img/36-2.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="30" y="0" width="120" height="79" uuid="63d553f5-4acd-46be-b500-fed39d31683e"/>
+				<imageExpression><![CDATA["https://rockpride.sru.edu/map/img/36-2.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="227" y="0" width="100" height="30" forecolor="#FFFFFF" uuid="38e7b92e-eae0-432d-899c-1828268ab4fd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="100" height="30" uuid="0ef3028a-cba3-482d-b59b-a0cf29852b4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Student ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="100" height="30" uuid="34f39a6d-ea5c-4d27-b750-0ee07ee5925b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="100" height="30" uuid="fe6842cf-4a47-4948-a1d1-86220b17ba68"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="100" height="30" uuid="ee2010db-d205-4da5-ba4b-9025d6dd9297"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Phone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="13839d91-3c35-4bab-9c11-d73a51c8c367"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="100" height="28" uuid="8f273d88-5319-421c-a383-ce27b766a0fe"/>
+				<textFieldExpression><![CDATA[$F{studentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="100" height="28" uuid="5752fcce-ca7e-405f-a69f-bbc2fa86f867"/>
+				<textFieldExpression><![CDATA[$F{firstName}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="100" height="28" uuid="d5d8dee7-af45-4829-aa47-033ba009e10f"/>
+				<textFieldExpression><![CDATA[$F{lastName}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="100" height="28" uuid="03331209-3fc3-4e4d-9174-2fd54f21aa9a"/>
+				<textFieldExpression><![CDATA[$F{phoneNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="28" uuid="8964a1b5-159e-4468-9223-efb820bce831"/>
+				<textFieldExpression><![CDATA[$F{emailAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
